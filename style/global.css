@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.picture {
+  @apply p-[2px]  bg-gradient-to-tr from-yellow-500 to-pink-600 rounded-full;
+}
+.slider {
+  @apply bg-white px-4  flex items-center  space-x-4 w-[30vw] transition duration-500;
+}
