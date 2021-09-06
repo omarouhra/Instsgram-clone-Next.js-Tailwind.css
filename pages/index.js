@@ -12,11 +12,11 @@ import UserPicture from "../components/UserPicture";
 import { useState } from "react";
 
 export default function Home() {
-  const [dms, setDms] = useState(1);
+  const [dms, setDms] = useState(22);
 
-  setInterval(() => {
+  setTimeout(() => {
     setDms(dms + 1);
-  }, 4000);
+  }, 5000);
   return (
     <div className='bg-gray-50  select-none mt-[58px]  	'>
       <Head>
