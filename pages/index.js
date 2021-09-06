@@ -5,7 +5,7 @@ import user from "../images/user.png";
 import suggestionData from "../data/suggestionData";
 import StoriesSlider from "../components/StoriesSlider";
 import Button from "../components/Button";
-import Suggestions from "../components/suggestions";
+import Suggestions from "../components/Suggestions";
 import Post from "../components/Post";
 import usersData from "../data/usersData";
 import UserPicture from "../components/UserPicture";
