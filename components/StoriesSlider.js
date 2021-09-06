@@ -8,7 +8,7 @@ function StoriesSlider() {
   const [slider, setslider] = useState(true);
   return (
     <section
-      className='relative py-4 border-t border-b max-w-xl mx-auto sm:border 
+      className='relative py-4 border-t md:mt-7 border-b max-w-xl mx-auto sm:border 
     overflow-x-auto'>
       {slider ? (
         <div className='z-20 absolute top-10 right-2   w-6 h-6 bg-white shadow-lg rounded-full'>
