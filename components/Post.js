@@ -9,14 +9,14 @@ import { useRef, useState } from "react";
 
 function Post({ img, name, place, post, likes, caption, date }) {
   const [likesCounter, setLikesCounter] = useState(parseInt(likes));
-  const [indicator, setIndicator] = useState(1);
+  const [indicator, setIndicator] = useState(false);
   const [save, setSave] = useState(false);
   const [comment, setComment] = useState("");
   const commentRef = useRef("");
 
   const counter = () => {
     setLikesCounter(likesCounter + indicator);
-    setIndicator(indicator * -1);
+    setIndicator(!indicator);
   };
   const saveFunction = () => {
     setSave(!save);
@@ -24,7 +24,9 @@ function Post({ img, name, place, post, likes, caption, date }) {
   return (
     <div className='bg-white pt-2 md:border max-w-xl mx-auto md:my-8'>
       <div className='flex items-center justify-between px-4 py-3 '>
-        <div className='flex space-x-3 items-center'>
+        <div
+          className='flex space-x-3 items-center'
+          ondblclick={() => console.log("heee")}>
           {img}
           <div>
             <h2 className='text-md font-semibold'>{name}</h2>
@@ -39,9 +41,9 @@ function Post({ img, name, place, post, likes, caption, date }) {
           <div>
             <HeartIcon
               className={
-                indicator > 0
-                  ? "  h-7 mb-2 cursor-pointer active:scale-150  duration-150"
-                  : "h-7 mb-2 cursor-pointer text-red-500 rounded-full fill-current active:scale-150  duration-150 "
+                indicator
+                  ? "h-7 mb-2 cursor-pointer text-red-500 rounded-full fill-current active:scale-150  duration-150 "
+                  : "  h-7 mb-2 cursor-pointer active:scale-150  duration-150"
               }
               onClick={() => {
                 counter();
