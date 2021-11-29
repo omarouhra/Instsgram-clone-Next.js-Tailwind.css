@@ -15,7 +15,11 @@ function Post({ img, name, place, post, likes, caption, date }) {
   const commentRef = useRef("");
 
   const counter = () => {
-    setLikesCounter(likesCounter + indicator);
+    if (!indicator) {
+      setLikesCounter(likesCounter + 1);
+    } else {
+      setLikesCounter(likesCounter - 1);
+    }
     setIndicator(!indicator);
   };
   const saveFunction = () => {
